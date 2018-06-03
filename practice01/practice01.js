@@ -1,6 +1,6 @@
 var options = {
   chart: {
-    type: 'bar'
+    type: 'line'
   },
   title: {
     text: 'This is my first char'
