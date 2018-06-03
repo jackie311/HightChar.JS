@@ -15,8 +15,41 @@ Highcharts.setOptions({
     });
 
 
+//
+// var option1 = {
+//   xAxis: {
+//     type: 'datetime'
+//   },
+//   series: [{
+//            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//            pointStart: Date.UTC(2010, 0, 1),
+//            pointInterval: 3600 * 1000 // one hour
+//    }]
+// };
+//
+// var option2 = {
+//   chart: {
+//             type: 'column'
+//         },
+//
+//         xAxis: {
+//             type: 'datetime'
+//         },
+//
+//         series: [{
+//             data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//             pointStart: Date.UTC(2010, 0, 1),
+//             pointInterval: 3600 * 1000 // one hour
+//         }]
+// }
+//
+// var chart1 = Highcharts.chart('char1', option1);
+// var chart2 = Highcharts.chart('char2', option2);
 
-var option1 = {
+var chart3 = new Highcharts.chart({
+  chart: {
+            renderTo: 'char1',
+        },
   xAxis: {
     type: 'datetime'
   },
@@ -25,23 +58,19 @@ var option1 = {
            pointStart: Date.UTC(2010, 0, 1),
            pointInterval: 3600 * 1000 // one hour
    }]
-};
+});
 
-var option2 = {
+var chart4 = new Highcharts.chart({
   chart: {
-            type: 'column'
-        },
-
-        xAxis: {
-            type: 'datetime'
-        },
-
-        series: [{
-            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-            pointStart: Date.UTC(2010, 0, 1),
-            pointInterval: 3600 * 1000 // one hour
-        }]
-}
-
-var chart1 = Highcharts.chart('char1', option1);
-var chart2 = Highcharts.chart('char2', option2);
+    renderTo: 'char2',
+    type: 'column'
+  },
+  xAxis: {
+    type: 'datetime'
+  },
+  series: [{
+      data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+      pointStart: Date.UTC(2010, 0, 1),
+      pointInterval: 3600 * 1000 // one hour
+  }]
+})
